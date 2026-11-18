@@ -1,0 +1,8 @@
+{
+  "name": "Treinta Finanzas",
+  "description": "App de finanzas para negocios con control de gastos, facturación automática, análisis comparativo de flujo de caja, deudas, inventario y reportes mensuales detallados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

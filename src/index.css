@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.012em;
+  }
+  
+  /* Distinct, ultra-modern tabular numerals for financial figures, balances, and counters */
+  .font-mono, .tabular-nums, .font-num {
+    font-family: 'Chivo Mono', 'Azeret Mono', 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1, "zero" 1;
+    letter-spacing: -0.03em;
+  }
+
+  .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.025em;
+  }
+
+  .font-brand {
+    font-family: 'Bricolage Grotesque', 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Print styling for invoices and reports */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invoice, #printable-invoice *, #printable-report, #printable-report * {
+    visibility: visible;
+  }
+  #printable-invoice, #printable-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
